@@ -1,0 +1,75 @@
+<div class="headerMenu">
+    <div class="searchLabel">
+      <label>რას ეძებ?</label>
+      <input (input)="filter()" placeholder="Apple" [(ngModel)]="keyWord" type="text" class="inputForm">
+      <label>MIN:</label>
+      <input (input)="filter()" placeholder="0-დან"  [(ngModel)]="minPrice" type="number" class="inputForm" >
+      <label>MAX:</label>
+      <input (input)="filter()" placeholder="უსასრულობამდე"  [(ngModel)]="maxPrice" type="number" class="inputForm">
+    </div> 
+  </div>
+
+<h4 class="product-category-title"> ყველა პროდუქცია </h4>
+<div class="product">
+    <div *ngFor="let item of productList; let i = index" class="card" >
+      <img [src]="item.images[0]" class="card-img-top" alt="{{item.name}}">
+        <div class="productCard">
+        <h5 class="card-title"> {{item.name}}</h5>
+        <!-- routerLink="/product" [queryParams]="{id : item._id}" -->
+        <h5 class="card-title"> {{item.price}} ₾ </h5>
+        <button aria-current="page" routerLink="/product" class="btn btn-primary" [queryParams]="{id : item.id}">დეტალურად</button>
+      </div> 
+    </div>
+</div>
+
+<div class="footerInfo">
+<div class="downBar">
+  <div class="shop">
+      <ul>
+          <li>
+              <a routerLink="/home">Shop</a>
+          </li>
+          <li>
+              <a routerLink="/contact">Contact</a>
+          </li>
+          <li>
+            <a href="https://bankofgeorgia.ge/ka/retail/mobile-bank">Payment Methods</a>
+        </li>
+      </ul>
+  </div>
+
+  <div class="subscribe">
+      <div class="emailcontainer">
+      <label for="subscribe" class="subscribe1">SUBSCRIBE US ON: </label>
+      </div>
+
+      <div class="iconsContainer" id="iconsContainer1">
+          <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i>
+          </a>
+          <a href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://www.pinterest.ca/"><i class="fa-brands fa-pinterest-p"></i>
+          </a>
+          <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i>
+          </a>
+          <a href="https://twitter.com/?lang=en"><i class="fa-brands fa-twitter"></i>
+          </a>
+      </div>
+  </div>
+</div>
+</div>
+
+
+
+
+<!-- <h4 class="product-category-title"> ყველა პროდუქცია </h4>
+<div class="product">
+    <div *ngFor="let item of productList let i = index" class="card" >
+      <img [src]="item.thumbnail" class="card-img-top" alt="{{item.title}}">
+        <div class="productCard">
+        <h5 class="card-title" routerLink="/product" [queryParams]="{id : item._id}">{{item.title}}</h5>
+        <h5 class="card-title">$ {{item.price.current}}</h5>
+        <button aria-current="page" routerLink="/product" class="btn btn-primary" [queryParams]="{id : item._id}">დეტალურად</button>
+      </div>
+    </div>
+</div> -->

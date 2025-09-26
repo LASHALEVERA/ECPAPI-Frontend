@@ -1,0 +1,17 @@
+.maps {display: block;
+}
+
+iframe {display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-self: center;
+    margin-left: 50px ;
+}
+
+header {
+    background-color: #009688;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 30px;
+}

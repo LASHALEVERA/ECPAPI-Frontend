@@ -1,0 +1,247 @@
+:root {
+  --main-bg: #8C92AC;
+  --primary: #1E88E5;
+  --danger: crimson;
+  --text-dark: #222;
+  --text-light: #eee;
+}
+
+body {
+  background-color: var(--main-bg);
+  color: var(--text-dark);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.navbar {
+  position: fixed;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.5rem 1rem !important;
+  top: 0 !important;
+  z-index: 7;
+}
+
+.headerMenu {display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Product Section */
+.product { width: 97%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+/* Card Styles */
+.card { 
+  width: 280px;
+  height: 430px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+img.card-img-top {  
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* Card Layout */
+.productCard { display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 300px;
+  height: 100%;
+}
+
+.product-card {width: 18rem;
+}
+
+/* Card Title */
+.card-title { 
+  width: 270px;
+  margin-left: 20px;
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #222;
+  transition: color 0.3s ease;
+}
+
+/* Category Heading */
+.product-category-title { 
+   display: flex;
+  justify-content: center;
+  color: white;
+  margin: 20px 0 0 80px;
+}
+
+/* Search Label Area */
+.searchLabel {display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 500px;
+  padding: 10px;
+  margin-top: 56px;
+}
+
+.btn.btn-primary { margin-left: 20px;
+  margin-top: 10px;
+}
+
+/* Input Form Styling */
+.inputForm { width: 500px;
+  height: 40px;
+  padding-left: 20px;
+  border: 3px solid blue;
+  border-radius: 20px;
+}
+
+/* General Label Styling */
+label {margin: 5px;
+}
+
+/* Footer Styles */
+.footerInfo { display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+/* Bottom Footer Bar */
+.downBar {  margin-top: 10px;
+  padding: 30px 20px 50px;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+}
+
+/* Social Icons Section */
+.iconsContainer { display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+/* Subscribe Section */
+.subscribe {color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 100px;
+}
+
+.card-title:hover {
+text-decoration: underline;
+color: crimson;
+transition: color 0.3s ease;
+transform: translateY(-5px);
+}
+
+.thumbnails-wrapper { display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.thumbnails-scroll {display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  max-width: 300px; /* Adjust for your layout */
+  padding: 5px;
+} 
+
+.thumbnail {flex: 0 0 auto;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.thumbnail img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.arrow {background: #eee;
+  border: none;
+  padding: 1px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.main-image-container img { width: 400px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* .thumbnail img.active {
+  border: 2px solid #1E88E5;
+  transform: scale(1.05);
+} */
+
+/* .container {
+
+} */
+
+
+
+
+@media (max-width: 768px) {
+  .product {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    height: auto;
+  }
+
+  .searchLabel,
+  .inputForm {
+    width: 90%;
+  }
+
+  .absolute2,
+  .absolute3 {
+    width: 90%;
+    height: auto;
+  }
+
+  .subscribe {
+    margin-left: 0;
+    text-align: center;
+    align-items: center;
+  }
+
+  img.card-img-top {  
+  width: fit-content;
+  object-fit: cover;
+}
+}

@@ -1,0 +1,73 @@
+<button class="btn btn-success" routerLink="/" id="back"> Go Back </button>
+
+<div class="relative">
+  <div class="absolute2">
+
+    <img [src]="thumbnail" alt="Product Photo" class="main-photo">
+
+  <div class="absolute1">
+    <button class="arrow left" (click)="scrollThumbnails('left')">&#8592;</button>
+      <div #thumbnailContainer class="thumbnails-scroll">
+        <div *ngFor="let imageUrl of selectedProduct.images" class="thumbnail">
+          <img [src]="imageUrl" alt="Product Photo" (click)="replace(imageUrl)" />
+        </div> 
+      </div>
+        <button class="arrow right" (click)="scrollThumbnails('right')">&#8594;</button>
+      </div>
+    </div>
+
+     <div class="absolute3">
+        <p class="discountPercentage"> ფასდაკლება - {{selectedProduct.price.discountPercentage}} % </p>
+        <h2> {{selectedProduct.title}}</h2> 
+        <h6 *ngIf="selectedProduct.stock <= 0">არ არის მარაგში</h6>
+        <h6 *ngIf="selectedProduct.stock>0"> ხელმისაწვდომი რაოდენობა: {{selectedProduct.stock}} </h6>
+        <h3> მიმდინარე ფასი: {{selectedProduct.price}} {{selectedProduct.price.currency}} </h3>
+        <h6> ძველი ფასი : </h6>
+        <h4 class="oldPrice">  {{selectedProduct.price.beforeDiscount}} {{selectedProduct.price.currency}} </h4>
+        <p> აღწერა: {{selectedProduct.description}}</p>
+        <p> გარანტია: 2 წელი</p>
+        <button class="btn btn-primary mt-2" [disabled]="selectedProduct.stock == 0" 
+          (click)="addToCart(selectedProduct, 1)">
+            დამატება კალათაში
+        </button>
+        <!-- <p> გარანტია: {{selectedProduct.warranty> 3 ? (selectedProduct.warranty) + 'თვე': selectedProduct.warranty + 'წელი'}}</p> -->
+      </div>
+</div>
+
+<div class="footerInfo">
+<div class="downBar">
+  <div class="shop">
+      <ul>
+          <li>
+              <a routerLink="/home">Shop</a>
+          </li>
+          <li>
+              <a routerLink="/contact">Contact</a>
+          </li>
+          <li>
+            <a href="https://bankofgeorgia.ge/ka/retail/mobile-bank">Payment Methods</a>
+        </li>
+      </ul>
+  </div>
+
+   <div class="subscribe">
+      <div class="emailcontainer">
+      <label for="subscribe" class="subscribe1">SUBSCRIBE US ON: </label>
+      </div>
+
+      <div class="iconsContainer" id="iconsContainer1">
+          <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i>
+          </a>
+          <a href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://www.pinterest.ca/"><i class="fa-brands fa-pinterest-p"></i>
+          </a>
+          <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i>
+          </a>
+          <a href="https://twitter.com/?lang=en"><i class="fa-brands fa-twitter"></i>
+          </a>
+      </div>
+  </div>
+</div>
+</div>
+

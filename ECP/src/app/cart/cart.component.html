@@ -1,0 +1,37 @@
+<div class="cart">
+<h2 id="MyBasket">ჩემი კალათა</h2>
+
+<div *ngIf="cartItems.length === 0">კალათა ცარიელია</div>
+
+<div *ngFor="let item of cartItems" class="cart-item">
+
+  <img [src]="item.product?.images?.[0]" alt="Product Image" width="100">
+  <div class="flex-1">
+    <h4>{{ item.product.title }}</h4>
+    <p>ფასი: {{ item.product.price }} {{ item.product.price.currency }}</p>
+  </div>
+  <div class="quantity-controls">
+    <button (click)="decreaseQuantity(item.product.id)">−</button>
+    <p>რაოდენობა: {{ item.quantity }}</p>
+    <button (click)="increaseQuantity(item.product.id)">+</button>
+  </div>
+  
+  <button (click)="removeItem(item.product.id)" class="remove-button">
+  <img src="icons/bin.png" alt="წაშლა" />
+  </button>
+</div>
+
+    <!-- <p> ჯამში: {{ item.product.price * item.quantity }} {{ item.product.price.currency }}</p>
+    <button (click)="removeItem(item.product.id)">წაშლა</button>
+  </div> -->
+
+<div *ngIf="cartItems.length > 0" class="cart-total">
+  <h3>სულ გადასახდელი: {{total}} ₾</h3>
+</div>
+
+<div *ngIf="cartItems.length > 0" class="checkout">
+  <button class="btn btn-success" (click)="clearCart()">გასუფთავება</button>
+<!-- </div> -->
+<!-- <div *ngIf="cartItems.length > 0" class="checkout"> -->
+  <button class="btn btn-primary" (click)="onCheckout()">გადახდა</button>
+</div>
